@@ -24,7 +24,7 @@ function PassengerTicket() {
 
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Train Details Card */}
-          <div className="p-6 bg-[#5D4C8C] text-white shrink-0">
+          <div className="p-6 bg-purple-900 text-white shrink-0">
             <div className="flex justify-between items-center mb-2">
               <h2 className="text-lg">16343 Amritha Exp</h2>
               <span className="text-sm">SL - GN</span>
