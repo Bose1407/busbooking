@@ -1,19 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 function Index() {
   return (
-    <div>
-      <div className='bg-purple-900 h-500'>
-            <h1 className='text-center text-yellow-400 font-bold text-3xl p-5'>Tradel - Pages</h1>
-            <div className='border-4 border-yellow-500 w-100 ml-110 p-4 mt-20'>
-                <Link to='/home'><p className='text-center text-white mt-3'>🏠Click Here To Visit Home Page</p></Link>
-                <Link to='/profile'><p className='text-center text-white mt-3'>🧔Click Here To Visit Profile Page</p></Link>
-                <Link to='/operatorlogin'><p className='text-center text-white mt-3'>🧑‍🏫Click Here To Operator Login Page</p></Link>
-                <Link to='/mybookings'><p className='text-center text-white mt-3'>📔Click Here To Visit Booking Page</p></Link>
-                <Link to='/admindashboard'><p className='text-center text-white mt-3'>💨Click Here To Admin DashBoard Page</p></Link>
-                <Link to='/passengerdetails'><p className='text-center text-white mt-3'>🧑‍🎨Click Here To Visity Passenger Detail Page</p></Link>
-                <Link to='/passengerticket'><p className='text-center text-white mt-3'>🎫Click Here To Visity Passenger Ticket Page</p></Link>
-            </div>
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-purple-700 flex flex-col items-center justify-center p-6">
+      <div className="max-w-3xl w-full">
+        <h1 className="text-center text-yellow-300 font-bold text-5xl mb-8 tracking-tight">
+          <span className="inline-block transform hover:scale-105 transition-transform duration-300">Tradel</span>
+          <span className="block text-2xl mt-2 text-yellow-200 font-medium">Navigation Portal</span>
+        </h1>
+        
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-yellow-400/30 shadow-2xl p-8 hover:shadow-yellow-400/20 transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { to: '/home', icon: '🏠', label: 'Home Page', color: 'bg-blue-600' },
+              { to: '/profile', icon: '🧔', label: 'Profile Page', color: 'bg-green-600' },
+              { to: '/operatorlogin', icon: '🧑‍🏫', label: 'Operator Login', color: 'bg-red-600' },
+              { to: '/mybookings', icon: '📔', label: 'My Bookings', color: 'bg-yellow-600' },
+              { to: '/admindashboard', icon: '💨', label: 'Admin Dashboard', color: 'bg-purple-600' },
+              { to: '/passengerdetails', icon: '🧑‍🎨', label: 'Passenger Details', color: 'bg-indigo-600' },
+              { to: '/passengerticket', icon: '🎫', label: 'Passenger Ticket', color: 'bg-pink-600' },
+            ].map((item, index) => (
+              <Link 
+                key={index}
+                to={item.to}
+                className={`${item.color} hover:bg-opacity-90 text-white rounded-lg p-4 flex items-center transform hover:scale-105 transition-all duration-300 shadow-md`}
+              >
+                <span className="text-2xl mr-3">{item.icon}</span>
+                <span className="font-medium">{item.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+        
+        <div className="mt-8 text-center text-yellow-200 opacity-80">
+          <p className="text-sm">© 2025 Tradel</p>
+        </div>
       </div>
     </div>
   )
